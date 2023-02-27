@@ -51,30 +51,32 @@ namespace ATMBank
             cardNum = newCardNum;
         }
         public void setFirstName(int newFirstName){
-            FirstName = newFirstName;
+            firstName = newFirstName;
         }
         public void setLastName(int newLastName){
-            LastName = newLastName;
+            lastName = newLastName;
         }
         public void setBalance(int newBalance){
-            Balance = newBalance;
+            balance = newBalance;
         }
+
+        //Métodos==============================================================
 
         void Depositar(cardHolder user){
             Console.WriteLine("Quanto deseja Depositar?");
             double deposito = Double.Parse(Console.ReadLine());
-            user.getBalance(deposito + user.getBalance);
+            user.setBalance(deposito + user.getBalance);
             Console.WriteLine("Obrigado, Adeus, seu dinheiro atual é" + user.getBalance);
         }
-
+    
         void Sacar(cardHolder user){
             Console.WriteLine("Quanto deseja Sacar?");
             double valor = Double.Parse(Console.ReadLine());
-            if(valor>user.getBalance){
+            if(int.Parse(valor)>int.Parse(user.getBalance)){
                 Console.WriteLine("Quanto deseja Depositar?");
                 break;
             }else{
-                user.setBalance = user.getBalance - valor;
+                user.setBalance = int.Parse(user.getBalance) - int.Parse(valor);
                 Console.WriteLine("Obrigado!");
             }
 
@@ -85,6 +87,6 @@ namespace ATMBank
         }
 
         List<cardHolder> cardHolders = new List<cardHolder>();
-        cardHolders.Add(new cardHolder("213124" , "Gui" , "Med" , 123 , 234.7 ));
+        //cardHolders.Add(new cardHolder("213124"  "Gui" , "Med" , 123 , 234.7 ));
     }
 }

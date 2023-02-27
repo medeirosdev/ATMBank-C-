@@ -1,0 +1,5 @@
+D:\Projetos\C#\ATMBank\obj\Debug\net7.0\ATMBank.csproj.AssemblyReference.cache
+D:\Projetos\C#\ATMBank\obj\Debug\net7.0\ATMBank.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projetos\C#\ATMBank\obj\Debug\net7.0\ATMBank.AssemblyInfoInputs.cache
+D:\Projetos\C#\ATMBank\obj\Debug\net7.0\ATMBank.AssemblyInfo.cs
+D:\Projetos\C#\ATMBank\obj\Debug\net7.0\ATMBank.csproj.CoreCompileInputs.cache

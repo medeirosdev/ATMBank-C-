@@ -9,7 +9,7 @@ namespace ATMBank
     {
         public static void Main(String[] args)
         {
-            
+            ATMInterface.printOptions();
         }
     }
 }
