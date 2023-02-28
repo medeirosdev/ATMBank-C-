@@ -11,10 +11,10 @@ namespace ATMBank
         private String firstName;
         private String lastName;
         private int pin;
-        private double balance;
+        private decimal balance;
 
 
-        public cardHolder(String cardNum , String firstName , String lastName , int pin  , double balance ){
+        public cardHolder(String cardNum , String firstName , String lastName , int pin  , decimal balance ){
             this.cardNum = cardNum;
             this.balance = balance;
             this.firstName= firstName;
@@ -38,7 +38,7 @@ namespace ATMBank
             return lastName;
         }
 
-        public double getBalance(){
+        public decimal getBalance(){
             return balance;
         }
 
@@ -56,7 +56,7 @@ namespace ATMBank
         public void setLastName(string newLastName){
             lastName = newLastName;
         }
-        public void setBalance(double newBalance){
+        public void setBalance(decimal newBalance){
             balance = newBalance;
         }
 
@@ -64,25 +64,28 @@ namespace ATMBank
 
         public static void Depositar(cardHolder user){
             Console.WriteLine("Quanto deseja Depositar?");
-            double deposito = Convert.ToDouble(Console.ReadLine());
-            user.setBalance(deposito + user.getBalance);
-            Console.WriteLine("Obrigado, Adeus, seu dinheiro atual é" + user.getBalance);
+            decimal deposito = Convert.ToDecimal(Console.ReadLine());
+            user.setBalance(deposito + user.getBalance());
+            Console.WriteLine("Obrigado, Adeus, seu dinheiro atual é" + user.getBalance());
         }
     
         public static void Sacar(cardHolder user){
             Console.WriteLine("Quanto deseja Sacar?");
-            double valor = Convert.ToDouble(Console.ReadLine());
-            if(valor>user.getBalance){
+            decimal valor = Convert.ToDecimal(Console.ReadLine());
+            decimal userB = user.getBalance();
+            if(valor>userB){
                 Console.WriteLine("Não");
             }else{
-                user.setBalance(user.getBalance - valor);
+                user.setBalance(userB - valor);
                 Console.WriteLine("Obrigado!");
             }
+
 
         }
 
         public static void ShowBalance(cardHolder user){
-            Console.WriteLine("Seu saldo" + user.getBalance);
+            decimal userB = user.getBalance();
+            Console.WriteLine("Seu saldo" + userB);
         }
 
         List<cardHolder> cardHolders = new List<cardHolder>();
