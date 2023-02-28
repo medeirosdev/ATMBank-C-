@@ -47,42 +47,41 @@ namespace ATMBank
         public void setPin(int newPin){
             pin = newPin;
         }
-        public void setNum(int newCardNum){
+        public void setNum(string newCardNum){
             cardNum = newCardNum;
         }
-        public void setFirstName(int newFirstName){
+        public void setFirstName(string newFirstName){
             firstName = newFirstName;
         }
-        public void setLastName(int newLastName){
+        public void setLastName(string newLastName){
             lastName = newLastName;
         }
-        public void setBalance(int newBalance){
+        public void setBalance(double newBalance){
             balance = newBalance;
         }
 
         //Métodos==============================================================
 
-        void Depositar(cardHolder user){
+        public static void Depositar(cardHolder user){
             Console.WriteLine("Quanto deseja Depositar?");
-            double deposito = Double.Parse(Console.ReadLine());
+            double deposito = Convert.ToDouble(Console.ReadLine());
             user.setBalance(deposito + user.getBalance);
             Console.WriteLine("Obrigado, Adeus, seu dinheiro atual é" + user.getBalance);
         }
     
-        void Sacar(cardHolder user){
+        public static void Sacar(cardHolder user){
             Console.WriteLine("Quanto deseja Sacar?");
-            double valor = Double.Parse(Console.ReadLine());
-            if(int.Parse(valor)>int.Parse(user.getBalance)){
-                Console.WriteLine("Quanto deseja Depositar?");
-                break;
+            double valor = Convert.ToDouble(Console.ReadLine());
+            if(valor>user.getBalance){
+                Console.WriteLine("Não");
             }else{
-                user.setBalance = int.Parse(user.getBalance) - int.Parse(valor);
+                user.setBalance(user.getBalance - valor);
                 Console.WriteLine("Obrigado!");
             }
 
         }
 
-        void ShowBalance(cardHolder user){
+        public static void ShowBalance(cardHolder user){
             Console.WriteLine("Seu saldo" + user.getBalance);
         }
 

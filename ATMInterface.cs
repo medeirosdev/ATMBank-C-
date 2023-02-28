@@ -10,7 +10,6 @@ namespace ATMBank
         public void printOptions()
 
         {
-            cardHolder cardHolder = new cardHolder();
 
             Console.WriteLine("Escolha uma dessas opções");
             Console.WriteLine("1 - Depositar");
@@ -22,28 +21,29 @@ namespace ATMBank
 
             Console.WriteLine("Crie uma conta!");
             Console.WriteLine("numero do cartão!");
-            string cardN= Console.ReadLine();
+            string cardN= Convert.ToString(Console.ReadLine());
             Console.WriteLine("Primeiro Nome:");
-            string fName= Console.ReadLine();
+            string fName= Convert.ToString(Console.ReadLine());
             Console.WriteLine("último Nome!");
-            string lName= Console.ReadLine();
+            string lName= Convert.ToString(Console.ReadLine());
             Console.WriteLine("PIN!");
-            int p = Console.ReadLine();
+            int p = Convert.ToInt32(Console.ReadLine());
             Console.WriteLine("Saldo INICIAL");
-            double balanc = Console.ReadLine();
-            //(String cardNum , String firstName , String lastName , int pin  , double balance )
+            double balanc = Convert.ToDouble(Console.ReadLine());
+
             cardHolder User = new cardHolder(cardN , fName, lName , p , balanc);
 
             switch(number){
                 case 1:
                     cardHolder.Depositar(User);
+                    break;  
                 case 2:
                     cardHolder.Sacar(User);
+                    break;  
                 case 3:
                     cardHolder.ShowBalance(User);
-
-                default:
-                    Console.WriteLine("Adeus");
+                    break;  
+                
             }
         }
     }

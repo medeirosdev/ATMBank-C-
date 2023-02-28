@@ -8,7 +8,7 @@ namespace ATMBank
     public class ATMrun
     {
         public static void Main(String[] args)
-        {
+        {   ATMInterface ATMInterface = new ATMInterface();
             ATMInterface.printOptions();
         }
     }
