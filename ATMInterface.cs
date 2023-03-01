@@ -24,14 +24,15 @@ namespace ATMBank
             switch(number){
                 case 1:
                     verficaConta.verificar();
-                    //cardHolder.Depositar(User);
                     printOptions();
                     break;  
                 case 2:
+                    verficaConta.verificar();
                     //cardHolder.Sacar(User);
                     printOptions();
                     break;  
                 case 3:
+                    verficaConta.verificar();
                     //cardHolder.ShowBalance(User);
                     printOptions();
                     break;  

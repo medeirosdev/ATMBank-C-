@@ -18,16 +18,17 @@ namespace ATMBank
         }
 
         public static void create(){
+    
             //===============================================
-            string path = @"D:\Projetos\C#\ATMBank\dados.json";
+            Console.WriteLine("numero do cartão!");
+                string cardN = Console.ReadLine();
+            //===============================================
+            string path = @$"D:\Projetos\C#\ATMBank\{cardN}.json";
             //===============================================
             if(!File.Exists(path)){
                 //Create a fille to store the data ==========
                 StreamWriter sw = File.CreateText(path);
             }
-            //===============================================
-            Console.WriteLine("numero do cartão!");
-                string cardN = Console.ReadLine();
             //===============================================
             Console.WriteLine("Primeiro Nome:");
             string lName = Console.ReadLine().ToString();
@@ -54,7 +55,7 @@ namespace ATMBank
             //===============================================
             string jsonString = JsonSerializer.Serialize(accountJsons);
             Console.WriteLine(jsonString);
-            string text = $"{cardN} : " + jsonString;
+            string text = $"{cardN} : " + jsonString + ",";
             File.WriteAllText(path , text);
             
 
